@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -23,7 +22,7 @@ public class HealthCheckIT {
             driver.navigate().to("http://192.168.0.12:9999/tasks/");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             String version = driver.findElement(By.id("version")).getText();
-            Assert.assertTrue(version.isEmpty());
+            Assert.assertFalse(version.isEmpty());
         } finally {
             driver.quit();
         }
