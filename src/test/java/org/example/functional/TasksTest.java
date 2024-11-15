@@ -125,24 +125,24 @@ public class TasksTest {
 
     }
 
-//    @Test
-//    public void deveRemoverTarefaComSucesso() throws MalformedURLException {
-//        WebDriver driver = acessarAplicacao();
-//        try {
-//            // inserir tarefa
-//            driver.findElement(By.id("addTodo")).click();
-//            driver.findElement(By.id("task")).sendKeys("Adicionado item para deletar via Selenium");
-//            driver.findElement(By.id("dueDate")).sendKeys(LocalDate.now().plusDays(1L).format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-//            driver.findElement(By.id("saveButton")).click();
-//            String message = driver.findElement(By.id("message")).getText();
-//            Assert.assertEquals("Success!", message);
-//            // remover
-//            driver.findElement(By.xpath("//*[@id=\"todoTable\"]/tbody/tr[1]/td[3]/a")).click();
-//            message = driver.findElement(By.id("message")).getText();
-//            Assert.assertEquals("Success!", message);
-//        } finally {
-//            driver.quit();
-//        }
-//    }
+    @Test
+    public void deveRemoverTarefaComSucesso() throws MalformedURLException {
+        WebDriver driver = acessarAplicacao();
+        try {
+            // inserir tarefa
+            driver.findElement(By.id("addTodo")).click();
+            driver.findElement(By.id("task")).sendKeys("Adicionado item para deletar via Selenium");
+            driver.findElement(By.id("dueDate")).sendKeys(LocalDate.now().plusDays(1L).format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            driver.findElement(By.id("saveButton")).click();
+            String message = driver.findElement(By.id("message")).getText();
+            Assert.assertEquals("Success!", message);
+            // remover
+            driver.findElement(By.xpath("//*[@id=\"todoTable\"]/tbody/tr[1]/td[3]/a")).click();
+            message = driver.findElement(By.id("message")).getText();
+            Assert.assertEquals("Success!", message);
+        } finally {
+            driver.quit();
+        }
+    }
 
 }
